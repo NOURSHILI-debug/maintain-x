@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: maintain-x
+Version: 0.1.0
+Summary: Multimodal AI platform for predictive industrial maintenance
+Requires-Python: <3.14,>=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: xgboost
+Requires-Dist: matplotlib
+Requires-Dist: seaborn
+Requires-Dist: jupyter
+Requires-Dist: pyyaml
+Requires-Dist: pydantic
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: joblib
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
