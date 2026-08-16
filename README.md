@@ -12,13 +12,15 @@ diagnose industrial equipment failures.
 
 ### Milestone 1 — Predictive Maintenance
 
-- [ ] Download NASA C-MAPSS dataset
-- [ ] Build data ingestion pipeline
-- [ ] Explore sensor data
-- [ ] Generate Remaining Useful Life labels
-- [ ] Build baseline model
-- [ ] Evaluate RUL predictions
-- [ ] Save trained model
+- [x] Repository setup
+- [x] Python environment
+- [x] C-MAPSS ingestion
+- [x] RUL preprocessing
+- [ ] Baseline model
+- [ ] Evaluation
+
+See [`data/README.md`](data/README.md) for how the C-MAPSS dataset is acquired
+manually and preprocessed locally.
 
 ## Planned Capabilities
 

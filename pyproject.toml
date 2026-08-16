@@ -18,6 +18,7 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "joblib",
+    "pyarrow",
 ]
 
 [project.optional-dependencies]
@@ -37,6 +38,9 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+markers = [
+    "integration: requires the real NASA C-MAPSS dataset (runs only when the archive is present in data/raw)",
+]
 
 [tool.ruff]
 line-length = 100

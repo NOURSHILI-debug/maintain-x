@@ -21,6 +21,9 @@ data/processed/*
 
 # Trained models
 models/
+*.egg-info/
+
+# Model artifacts
 *.pt
 *.pth
 *.pkl
