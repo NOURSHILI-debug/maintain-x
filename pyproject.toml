@@ -19,6 +19,9 @@ dependencies = [
     "uvicorn",
     "joblib",
     "pyarrow",
+    "mlflow",
+    "boto3",
+    "psycopg2-binary",
 ]
 
 [project.optional-dependencies]
