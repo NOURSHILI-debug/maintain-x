@@ -1,0 +1,3 @@
+FLAT_SENSORS_FD001: list[int] = [1, 5, 6, 10, 16, 18, 19]
+ROLLING_WINDOW = 10
+RUL_CAP = 125
