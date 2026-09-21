@@ -10,7 +10,7 @@ env/
 
 # Environment variables
 .env
-.env.*
+
 
 # Jupyter
 .ipynb_checkpoints/
@@ -22,7 +22,8 @@ data/processed/*
 # Trained models
 models/
 *.egg-info/
-
+mlruns/
+ mlflow.db
 # Model artifacts
 *.pt
 *.pth

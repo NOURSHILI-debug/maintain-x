@@ -46,3 +46,23 @@ def load_train_val_split(val_fraction=0.2, seed=42):
     X_train, y_train = train_split[feature_cols], train_split["rul"]
     X_val, y_val = val_split[feature_cols], val_split["rul"]
     return X_train, y_train, X_val, y_val
+def load_test_set():
+    """Test features aligned with the train feature columns, plus a last-cycle mask."""
+    base_dir = Path(__file__).resolve().parents[3]
+    train = pd.read_parquet(base_dir / "data/processed/FD001/train.parquet")
+    test = pd.read_parquet(base_dir / "data/processed/FD001/test.parquet")
+
+    train_features, test_features = build_features(train, test)
+    feature_cols = [c for c in train_features.columns
+                    if c not in ("unit_id", "cycle", "rul")]
+
+    missing = {"unit_id", "cycle", "rul"} - set(test_features.columns)
+    assert not missing, f"test features lack {missing}; the pipeline drops them"
+
+    X_test = test_features[feature_cols]          # same columns/order as training
+    y_test = test_features["rul"]
+    last_mask = (
+        test_features.groupby("unit_id")["cycle"].transform("max")
+        == test_features["cycle"]
+    ).to_numpy()
+    return X_test, y_test, last_mask
