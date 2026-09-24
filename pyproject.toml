@@ -20,6 +20,7 @@ dependencies = [
     "joblib",
     "pyarrow",
     "mlflow",
+    "skops",
     "boto3",
     "psycopg2-binary",
 ]
